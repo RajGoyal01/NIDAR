@@ -1,0 +1,196 @@
+{
+  "created_utc": "2026-10-06T19:15:55.249913+00:00",
+  "selection_split": "valid",
+  "policy": {
+    "primary_confidence": 0.2,
+    "general_confidence": 0.7,
+    "posture_confidence": 0.25,
+    "horizontal_aspect": 1.0,
+    "small_confidence": 0.2,
+    "small_area_ratio": 0.006,
+    "dedupe_iou": 0.5
+  },
+  "selected_validation_report": {
+    "created_utc": "2026-10-06T19:15:52.200825+00:00",
+    "model_class": "person_candidate",
+    "mode": "hybrid_general_plus_posture_specialist",
+    "dataset": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\datasets\\nidar_person_v4_full_visdrone",
+    "split": "valid",
+    "policy": {
+      "primary_confidence": 0.2,
+      "general_confidence": 0.7,
+      "posture_confidence": 0.25,
+      "horizontal_aspect": 1.0,
+      "small_confidence": 0.2,
+      "small_area_ratio": 0.006,
+      "dedupe_iou": 0.5
+    },
+    "images": 1971,
+    "overall": {
+      "truths": 16049,
+      "tp": 5202,
+      "fp": 5472,
+      "precision": 0.4873524451939292,
+      "recall": 0.32413234469437346
+    },
+    "by_source": {
+      "coco": {
+        "truths": 1666,
+        "tp": 1223,
+        "fp": 368,
+        "images": 1015,
+        "negative_images_with_fp": 26,
+        "precision": 0.7686989314896292,
+        "recall": 0.734093637454982
+      },
+      "fallen": {
+        "truths": 414,
+        "tp": 388,
+        "fp": 76,
+        "images": 408,
+        "precision": 0.8362068965517241,
+        "recall": 0.9371980676328503
+      },
+      "visdrone": {
+        "truths": 13969,
+        "tp": 3591,
+        "fp": 5028,
+        "images": 548,
+        "negative_images_with_fp": 4,
+        "precision": 0.41663766098155236,
+        "recall": 0.257069224711862
+      }
+    },
+    "by_size": {
+      "large": {
+        "truths": 1158,
+        "tp": 1070,
+        "recall": 0.924006908462867
+      },
+      "medium": {
+        "truths": 2096,
+        "tp": 1273,
+        "recall": 0.6073473282442748
+      },
+      "small": {
+        "truths": 6247,
+        "tp": 2088,
+        "recall": 0.33424043540899634
+      },
+      "tiny": {
+        "truths": 6548,
+        "tp": 771,
+        "recall": 0.11774587660354306
+      }
+    },
+    "fallen_pose_recall": {
+      "fallen": 0.9322709163346613,
+      "lying": 0.8717948717948718,
+      "sitting": 1.0,
+      "standing": 0.9578947368421052
+    },
+    "inference_median_ms": 61.91519999993034,
+    "inference_p95_ms": 78.05214999825694,
+    "interpretation": "Visible person/body candidate only; not medical status or unique identity.",
+    "calibration_checks": {
+      "coco_recall": true,
+      "coco_precision": true,
+      "coco_negative_fp_images": true,
+      "fallen_recall": true,
+      "lying_recall": true,
+      "large_recall": true,
+      "small_recall_improvement": true,
+      "aerial_recall_improvement": true,
+      "p95_latency_ms": false
+    },
+    "calibration_score": [
+      8,
+      3.877095168493192
+    ]
+  },
+  "primary_validation_report": {
+    "created_utc": "2026-10-06T19:15:17.841648+00:00",
+    "model_class": "person_candidate",
+    "mode": "hybrid_general_plus_posture_specialist",
+    "dataset": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\datasets\\nidar_person_v4_full_visdrone",
+    "split": "valid",
+    "policy": {
+      "primary_confidence": 0.2,
+      "general_confidence": 1.0,
+      "posture_confidence": 1.0,
+      "horizontal_aspect": 2.0,
+      "small_confidence": 1.0,
+      "small_area_ratio": 0.001,
+      "dedupe_iou": 0.5
+    },
+    "images": 1971,
+    "overall": {
+      "truths": 16049,
+      "tp": 2774,
+      "fp": 685,
+      "precision": 0.8019658860942469,
+      "recall": 0.1728456601657424
+    },
+    "by_source": {
+      "coco": {
+        "truths": 1666,
+        "tp": 1212,
+        "fp": 266,
+        "images": 1015,
+        "negative_images_with_fp": 13,
+        "precision": 0.8200270635994588,
+        "recall": 0.7274909963985594
+      },
+      "fallen": {
+        "truths": 414,
+        "tp": 306,
+        "fp": 57,
+        "images": 408,
+        "precision": 0.8429752066115702,
+        "recall": 0.7391304347826086
+      },
+      "visdrone": {
+        "truths": 13969,
+        "tp": 1256,
+        "fp": 362,
+        "images": 548,
+        "negative_images_with_fp": 2,
+        "precision": 0.7762669962917181,
+        "recall": 0.08991337962631542
+      }
+    },
+    "by_size": {
+      "large": {
+        "truths": 1158,
+        "tp": 988,
+        "recall": 0.853195164075993
+      },
+      "medium": {
+        "truths": 2096,
+        "tp": 995,
+        "recall": 0.4747137404580153
+      },
+      "small": {
+        "truths": 6247,
+        "tp": 734,
+        "recall": 0.11749639827117016
+      },
+      "tiny": {
+        "truths": 6548,
+        "tp": 57,
+        "recall": 0.00870494807574832
+      }
+    },
+    "fallen_pose_recall": {
+      "fallen": 0.6533864541832669,
+      "lying": 0.5641025641025641,
+      "sitting": 1.0,
+      "standing": 0.9578947368421052
+    },
+    "inference_median_ms": 61.91519999993034,
+    "inference_p95_ms": 78.05214999825694,
+    "interpretation": "Visible person/body candidate only; not medical status or unique identity."
+  },
+  "primary_model": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\models\\yolo11n.pt",
+  "specialist_model": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\runs\\training\\nidar-person-yolo11n-v7-curriculum\\weights\\best-person-candidate.pt"
+}

@@ -1,0 +1,128 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NIDAR: Debug full phone pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "nidar_survivor_demo.main",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--source",
+        "${input:phoneVideoUrl}",
+        "--transport",
+        "mjpeg",
+        "--rotation",
+        "${input:rotation}",
+        "--dashboard",
+        "--dashboard-port",
+        "${input:dashboardPort}",
+        "--headless"
+      ]
+    },
+    {
+      "name": "NIDAR: Debug detection-only phone stream",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "nidar_survivor_demo.main",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--source",
+        "${input:phoneVideoUrl}",
+        "--transport",
+        "mjpeg",
+        "--rotation",
+        "${input:rotation}",
+        "--detect"
+      ]
+    },
+    {
+      "name": "NIDAR: Debug full pipeline with local video",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "nidar_survivor_demo.main",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--source",
+        "${input:localVideoPath}",
+        "--dashboard",
+        "--dashboard-port",
+        "${input:dashboardPort}",
+        "--headless"
+      ]
+    },
+    {
+      "name": "NIDAR: Debug full USB camera pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "nidar_survivor_demo.main",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "args": [
+        "--source",
+        "${input:usbCameraIndex}",
+        "--backend",
+        "${input:usbBackend}",
+        "--rotation",
+        "${input:rotation}",
+        "--manage"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "phoneVideoUrl",
+      "type": "promptString",
+      "description": "IP Webcam stream URL including /video",
+      "default": "http://PHONE_IP:8080/video"
+    },
+    {
+      "id": "localVideoPath",
+      "type": "promptString",
+      "description": "Absolute path to a local test video",
+      "default": "C:\\path\\to\\test-video.mp4"
+    },
+    {
+      "id": "rotation",
+      "type": "pickString",
+      "description": "Clockwise correction for the phone image",
+      "options": [
+        "0",
+        "90",
+        "180",
+        "270"
+      ],
+      "default": "0"
+    },
+    {
+      "id": "dashboardPort",
+      "type": "promptString",
+      "description": "Local dashboard port",
+      "default": "8765"
+    },
+    {
+      "id": "usbCameraIndex",
+      "type": "promptString",
+      "description": "OpenCV USB/built-in webcam index",
+      "default": "0"
+    },
+    {
+      "id": "usbBackend",
+      "type": "pickString",
+      "description": "Windows camera backend",
+      "options": [
+        "dshow",
+        "msmf",
+        "auto"
+      ],
+      "default": "dshow"
+    }
+  ]
+}

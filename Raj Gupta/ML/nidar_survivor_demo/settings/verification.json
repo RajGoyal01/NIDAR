@@ -1,0 +1,7 @@
+{
+  "window": 5,
+  "required": 3,
+  "min_confidence": 0.2,
+  "min_visible_area_ratio": 0.0001,
+  "max_gap_seconds": 1.0
+}

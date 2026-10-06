@@ -1,0 +1,7 @@
+{
+  "new_identity_hits": 3,
+  "observation_interval": 1.0,
+  "max_observations_per_survivor": 100,
+  "max_track_history": 100,
+  "max_events": 100000
+}

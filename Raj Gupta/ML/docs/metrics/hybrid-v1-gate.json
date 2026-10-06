@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-06T19:19:18.702848+00:00",
+  "status": "ENGINEERING-GATE-PASS",
+  "checks": {
+    "class_schema": true,
+    "coco_recall": true,
+    "coco_precision": true,
+    "coco_negative_fp_images": true,
+    "fallen_recall": true,
+    "lying_recall": true,
+    "large_recall": true,
+    "small_recall_improvement": true,
+    "aerial_recall_improvement": true,
+    "p95_latency_ms": true
+  },
+  "passed": 10,
+  "total": 10,
+  "scope": "Public-data laptop engineering gate only; OAK-D field acceptance remains OPEN."
+}

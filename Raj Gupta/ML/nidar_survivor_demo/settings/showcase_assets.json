@@ -1,0 +1,53 @@
+{
+  "source": "COCO 2017 validation images; image-level Creative Commons metadata from instances_val2017.json",
+  "assets": [
+    {
+      "path": "demo_assets/coco_val/000000000785.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000000785.jpg",
+      "sha256": "83981537a7baeafbeb9c8cb67b3484dc26433f574b3685d021fa537e277e4726",
+      "bytes": 133674,
+      "license_name": "Attribution License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/"
+    },
+    {
+      "path": "demo_assets/coco_val/000000000872.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000000872.jpg",
+      "sha256": "c2aa138ee3a59b057a7ba6fc5a6a18e62af531aa7dab78a7bfd33c1cd7e55eb6",
+      "bytes": 317669,
+      "license_name": "Attribution License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/"
+    },
+    {
+      "path": "demo_assets/coco_val/000000002153.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000002153.jpg",
+      "sha256": "8795ff243cf20405bd442631d5d1cb7e60665dd459c8d57f5764333808dd49fd",
+      "bytes": 136034,
+      "license_name": "Attribution-ShareAlike License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/"
+    },
+    {
+      "path": "demo_assets/coco_val/000000005193.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000005193.jpg",
+      "sha256": "2f0360e89d71b146cbfaee05e934303864fa61d9bf1a1f5cc0c2e508b8191b8d",
+      "bytes": 102722,
+      "license_name": "Attribution-NonCommercial-NoDerivs License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/"
+    },
+    {
+      "path": "demo_assets/coco_val/000000053626.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000053626.jpg",
+      "sha256": "b609e8bb0a6363d08b129b858886c083b6729d35fba713562334dfe0a1a409ec",
+      "bytes": 170866,
+      "license_name": "Attribution-NonCommercial-NoDerivs License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-nd/2.0/"
+    },
+    {
+      "path": "demo_assets/coco_val/000000160864.jpg",
+      "url": "http://images.cocodataset.org/val2017/000000160864.jpg",
+      "sha256": "d5b23f351cbb928ac727e2265d5fecc7de223ccf3773a0db2754de474da22ddc",
+      "bytes": 114325,
+      "license_name": "Attribution-NonCommercial License 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/2.0/"
+    }
+  ]
+}

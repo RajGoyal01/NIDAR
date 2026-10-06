@@ -1,0 +1,36 @@
+{
+  "source": "COCO 2017 validation images stored locally in datasets/coco2017",
+  "count_meaning": "Current-frame YOLO person detections; not persistent survivor identities",
+  "scenes": [
+    {
+      "name": "Single-person scene",
+      "image": "demo_assets/coco_val/000000000785.jpg",
+      "expected_detections": 1
+    },
+    {
+      "name": "Two-person scene",
+      "image": "demo_assets/coco_val/000000000872.jpg",
+      "expected_detections": 2
+    },
+    {
+      "name": "Four-person scene A",
+      "image": "demo_assets/coco_val/000000002153.jpg",
+      "expected_detections": 4
+    },
+    {
+      "name": "Six-person scene A",
+      "image": "demo_assets/coco_val/000000005193.jpg",
+      "expected_detections": 6
+    },
+    {
+      "name": "Four-person scene B",
+      "image": "demo_assets/coco_val/000000053626.jpg",
+      "expected_detections": 4
+    },
+    {
+      "name": "Six-person scene B",
+      "image": "demo_assets/coco_val/000000160864.jpg",
+      "expected_detections": 6
+    }
+  ]
+}

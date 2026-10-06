@@ -1,0 +1,309 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "NIDAR: Verify environment and GPU",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "${workspaceFolder}\\nidar_survivor_demo\\check_environment.py",
+        "--gui"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Run all automated tests",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "nidar_survivor_demo\\tests",
+        "-t",
+        ".",
+        "-v"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Start FULL phone demo + dashboard",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-PhoneDemo.ps1",
+        "-PhoneUrl",
+        "${input:phoneBaseUrl}",
+        "-Profile",
+        "${input:cameraProfile}",
+        "-Dashboard",
+        "-DashboardPort",
+        "${input:dashboardPort}",
+        "-Rotation",
+        "${input:rotation}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "NIDAR: Start detection-only phone test",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-PhoneDemo.ps1",
+        "-PhoneUrl",
+        "${input:phoneBaseUrl}",
+        "-Profile",
+        "${input:cameraProfile}",
+        "-Detect",
+        "-Rotation",
+        "${input:rotation}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "NIDAR: Start camera-only latency test",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-PhoneDemo.ps1",
+        "-PhoneUrl",
+        "${input:phoneBaseUrl}",
+        "-Profile",
+        "${input:cameraProfile}",
+        "-Rotation",
+        "${input:rotation}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "NIDAR: Find USB and built-in cameras",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-USBCameraDemo.ps1",
+        "-ListCameras",
+        "-Backend",
+        "${input:usbBackend}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Start FULL USB camera demo",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-USBCameraDemo.ps1",
+        "-CameraIndex",
+        "${input:usbCameraIndex}",
+        "-Backend",
+        "${input:usbBackend}",
+        "-Mode",
+        "Full",
+        "-Rotation",
+        "${input:rotation}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "NIDAR: Prepare complete VisDrone training data",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-FullVisDroneTraining.ps1",
+        "-PrepareOnly"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Start complete VisDrone training in background",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-FullVisDroneTraining.ps1",
+        "-Background"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Start detector precision recovery in background",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\Start-DetectorRecovery.ps1",
+        "-Background"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "NIDAR: Check installed packages",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pip",
+        "check"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "phoneBaseUrl",
+      "type": "promptString",
+      "description": "IP Webcam base URL shown on the phone (no /video and no password)",
+      "default": "http://PHONE_IP:8080"
+    },
+    {
+      "id": "cameraProfile",
+      "type": "pickString",
+      "description": "Phone streaming profile",
+      "options": [
+        "720p",
+        "540p"
+      ],
+      "default": "720p"
+    },
+    {
+      "id": "rotation",
+      "type": "pickString",
+      "description": "Clockwise correction for the phone image",
+      "options": [
+        "0",
+        "90",
+        "180",
+        "270"
+      ],
+      "default": "0"
+    },
+    {
+      "id": "dashboardPort",
+      "type": "promptString",
+      "description": "Local dashboard port",
+      "default": "8765"
+    },
+    {
+      "id": "phoneVideoUrl",
+      "type": "promptString",
+      "description": "Debug stream URL including /video",
+      "default": "http://PHONE_IP:8080/video"
+    },
+    {
+      "id": "localVideoPath",
+      "type": "promptString",
+      "description": "Absolute path to a local test video",
+      "default": "C:\\path\\to\\test-video.mp4"
+    },
+    {
+      "id": "usbCameraIndex",
+      "type": "promptString",
+      "description": "OpenCV index found by the USB camera discovery task",
+      "default": "0"
+    },
+    {
+      "id": "usbBackend",
+      "type": "pickString",
+      "description": "Windows camera backend; try MSMF if DirectShow cannot open the device",
+      "options": [
+        "dshow",
+        "msmf",
+        "auto"
+      ],
+      "default": "dshow"
+    }
+  ]
+}

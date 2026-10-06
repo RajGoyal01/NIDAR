@@ -1,0 +1,99 @@
+{
+  "created_utc": "2026-09-30T14:54:43.165111+00:00",
+  "model": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\models\\yolo11n.pt",
+  "model_class": "person",
+  "dataset": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\datasets\\nidar_person_v1",
+  "split": "test",
+  "images": 2956,
+  "confidence": 0.2,
+  "match_iou": 0.5,
+  "overall": {
+    "truths": 29282,
+    "tp": 2525,
+    "fp": 724,
+    "precision": 0.7771622037550016,
+    "recall": 0.08623044873984018
+  },
+  "by_source": {
+    "coco": {
+      "truths": 1450,
+      "tp": 1042,
+      "fp": 230,
+      "images": 899,
+      "negative_images_with_fp": 16,
+      "precision": 0.8191823899371069,
+      "recall": 0.7186206896551725
+    },
+    "fallen": {
+      "truths": 450,
+      "tp": 274,
+      "fp": 105,
+      "images": 447,
+      "precision": 0.7229551451187335,
+      "recall": 0.6088888888888889
+    },
+    "visdrone": {
+      "truths": 27382,
+      "tp": 1209,
+      "fp": 389,
+      "images": 1610,
+      "negative_images_with_fp": 19,
+      "precision": 0.7565707133917396,
+      "recall": 0.04415309327295303
+    }
+  },
+  "by_size": {
+    "large": {
+      "truths": 1192,
+      "tp": 957,
+      "precision": 1.0,
+      "recall": 0.8028523489932886
+    },
+    "medium": {
+      "truths": 2837,
+      "tp": 1064,
+      "precision": 1.0,
+      "recall": 0.37504406062742335
+    },
+    "small": {
+      "truths": 6608,
+      "tp": 448,
+      "precision": 1.0,
+      "recall": 0.06779661016949153
+    },
+    "tiny": {
+      "truths": 18645,
+      "tp": 56,
+      "precision": 1.0,
+      "recall": 0.003003486189326897
+    }
+  },
+  "fallen_pose_recall": {
+    "fallen": 0.5883977900552486,
+    "lying": 0.4090909090909091,
+    "sitting": 0.9375,
+    "standing": 1.0
+  },
+  "fallen_pose_counts": {
+    "fallen": {
+      "found": 213,
+      "total": 362
+    },
+    "lying": {
+      "found": 18,
+      "total": 44
+    },
+    "sitting": {
+      "found": 15,
+      "total": 16
+    },
+    "standing": {
+      "found": 28,
+      "total": 28
+    }
+  },
+  "inference_median_ms": 44.55009999946924,
+  "inference_p95_ms": 60.98802499946032,
+  "interpretation": "person_candidate means visible human/body evidence, not survivor health, injury, liveness or death.",
+  "known_gap": "No project-owned final OAK-D indoor field test is included."
+}

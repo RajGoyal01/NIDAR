@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "models": [
+    {
+      "path": "models/yolo11n.pt",
+      "role": "COCO general-person primary detector",
+      "bytes": 5613764,
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n.pt"
+    },
+    {
+      "path": "models/nidar-person-posture-specialist-yolo11n.pt",
+      "role": "validation-calibrated posture/aerial specialist",
+      "bytes": 5480551,
+      "sha256": "5e62b5594fedd06b9e679cbd069d08565ffcea24802bb6a179d00513119a3b88",
+      "source": "project v7 curriculum candidate; see docs/phase_reports/NIDAR_DETECTOR_DATASET_AND_TRAINING.md"
+    },
+    {
+      "path": "models/osnet_x0_25_msmt17.pth",
+      "role": "OSNet appearance Re-ID encoder",
+      "bytes": 9336983,
+      "sha256": "cf55163d78fc44c62c82f85ab62d39f10438679b5abe8c698ae08cfa84aa6e18",
+      "source": "https://kaiyangzhou.github.io/deep-person-reid/MODEL_ZOO"
+    }
+  ]
+}

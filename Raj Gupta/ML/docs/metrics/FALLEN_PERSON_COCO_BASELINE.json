@@ -1,0 +1,23 @@
+{
+  "evaluated_utc": "2026-09-27T16:46:00Z",
+  "model": "models/yolo11n.pt",
+  "model_origin": "COCO-pretrained Ultralytics YOLO11n",
+  "dataset": "datasets/fallen_person/person_candidate/data.yaml",
+  "split": "test",
+  "images": 300,
+  "boxes": 351,
+  "device": "NVIDIA GeForce RTX 3050 A Laptop GPU",
+  "imgsz": 640,
+  "batch": 8,
+  "single_class_evaluation": true,
+  "precision": 0.3638817210401231,
+  "recall": 0.614408710705007,
+  "map50": 0.37292338122478835,
+  "map50_95": 0.18515553018052794,
+  "speed_ms_per_image": {
+    "preprocess": 0.5955050000102347,
+    "inference": 34.67363499999617,
+    "postprocess": 2.4947619999935946
+  },
+  "interpretation": "Diagnostic baseline only. The supplied split shares coarse source groups with train and validation, and therefore is not independent field evidence. No fine-tuning was performed in this acquisition task."
+}

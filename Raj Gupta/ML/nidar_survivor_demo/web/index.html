@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NIDAR • Mission control</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <dialog id="reset-dialog" aria-labelledby="reset-title">
+      <h2 id="reset-title">Start a new mission?</h2>
+      <p>The current mission will be saved. Counts, tracker and appearance history will start fresh. This affects all dashboard tabs.</p>
+      <button id="reset-cancel" class="button">Cancel</button>
+      <button id="reset-confirm" class="button">Save old mission and reset</button>
+    </dialog>
+    <aside class="rail">
+      <a href="#overview" class="brand" aria-label="NIDAR overview"
+        >N<span>·</span></a
+      >
+      <div class="rail-label">AIR MOUSE</div>
+      <nav aria-label="Sections">
+        <a href="#overview" title="Overview">◈</a
+        ><a href="#registry" title="Identity register">▤</a
+        ><a href="#activity" title="Activity log">≋</a>
+      </nav>
+      <span class="rail-foot">P07</span>
+    </aside>
+    <main id="overview">
+      <header>
+        <div>
+          <div class="eyebrow">
+            NIDAR / AIRMOUSE <span class="slash">/</span> PERCEPTION LAB
+          </div>
+          <h1>Mission control<span class="accent">.</span></h1>
+          <p class="sub">A clearer picture. Every observation accounted for.</p>
+        </div>
+        <div class="header-actions">
+          <button id="reset-demo" class="button" disabled>New Mission / Reset Demo</button>
+          <span id="connection" class="pill" role="status">CONNECTING</span
+          ><a class="button" href="/api/report" download>↓ Export report</a>
+        </div>
+      </header>
+      <section class="context">
+        <div>
+          <span class="dot"></span><strong id="mode">AWAITING BACKEND</strong
+          ><span id="mission">No mission loaded</span>
+        </div>
+        <span class="local">LOCAL WORKSPACE · CONFIRMED RESET ONLY</span>
+      </section>
+      <div id="notice" class="notice" role="status">
+        Connecting to the local perception service…
+      </div>
+      <section class="stats" aria-label="Mission counts">
+        <article>
+          <span>People in view</span><strong id="current">—</strong
+          ><small>Tracked body candidates; identity may be pending</small>
+        </article>
+        <article class="featured">
+          <span>Unique people <b>ESTIMATE</b></span
+          ><strong id="unique">—</strong
+          ><small>Accepted records across this mission</small>
+        </article>
+        <article>
+          <span>Duplicate events</span><strong id="duplicates">—</strong
+          ><small>Accepted returns to existing records</small>
+        </article>
+        <article>
+          <span>Identity pending</span><strong id="pending">—</strong
+          ><small>Uncertain evidence is not counted as new</small>
+        </article>
+      </section>
+      <section class="workspace">
+        <article class="panel feed-panel">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">01 / PERCEPTION</span>
+              <h2>Camera workspace</h2>
+            </div>
+            <button
+              id="fullscreen"
+              class="icon-button"
+              aria-label="Expand camera workspace"
+            >
+              ⛶
+            </button>
+          </div>
+          <div id="feed" class="feed">
+            <img id="video" alt="Latest annotated perception frame" hidden />
+            <div id="empty">
+              <span class="crosshair">⌖</span>
+              <h3 id="empty-title">Awaiting a fresh frame</h3>
+              <p id="empty-message">No stale video is shown as live.</p>
+            </div>
+            <span class="feed-label" id="feed-label">NO VIDEO</span
+            ><span id="stage" class="stage"></span>
+          </div>
+          <div class="feed-bottom">
+            <span><i class="legend green"></i>Accepted S identity</span
+            ><span><i class="legend amber"></i>Pending evidence</span
+            ><span class="right">Appearance-based · Not medical status</span>
+          </div>
+        </article>
+        <aside class="panel health">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">02 / DIAGNOSTICS</span>
+              <h2>System health</h2>
+            </div>
+            <span class="pulse">◉</span>
+          </div>
+          <div id="modules" class="modules"></div>
+          <div class="metrics">
+            <div><span>Capture rate</span><strong id="capture">—</strong></div>
+            <div>
+              <span>Processed rate</span><strong id="processed">—</strong>
+            </div>
+            <div>
+              <span>YOLO inference</span><strong id="inference">—</strong>
+            </div>
+            <div><span>Decoded frame age</span><strong id="age">—</strong></div>
+          </div>
+          <p class="fine">
+            Frame age is measured after decode, not camera-to-screen delay.
+            Browser preview targets up to 30 FPS; actual speed depends on fresh processed frames.
+          </p>
+          <div class="scope">
+            <span>⌁</span>
+            <div>
+              <strong>Perception prototype</strong>
+              <p>Mapping & flight control are not connected.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+      <section class="bottom-grid">
+        <article class="panel" id="registry">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">03 / PERSISTENT IDENTITIES</span>
+              <h2>
+                Identity register
+                <span id="record-total" class="counter">0</span>
+              </h2>
+            </div>
+            <label class="sr-only" for="search">Search identity register</label
+            ><input
+              id="search"
+              type="search"
+              placeholder="Search S ID or reference…"
+              maxlength="80"
+            />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Identity</th>
+                  <th>Appearance ref.</th>
+                  <th>Visibility</th>
+                  <th>Last accepted observation</th>
+                  <th>Match score</th>
+                </tr>
+              </thead>
+              <tbody id="records"></tbody>
+            </table>
+          </div>
+          <p class="fine table-note">
+            S IDs belong to this mission. Match score is cosine similarity, not
+            identity probability.
+          </p>
+        </article>
+        <article class="panel" id="activity">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">04 / DECISION TRAIL</span>
+              <h2>Activity</h2>
+            </div>
+            <label class="sr-only" for="filter">Filter activity</label
+            ><select id="filter">
+              <option value="all">All events</option>
+              <option value="identity">Identity decisions</option>
+              <option value="health">Mission & health</option>
+            </select>
+          </div>
+          <ol id="events" class="events"></ol>
+          <p class="fine table-note">
+            Latest 100 events. Full persisted audit remains in the mission
+            database.
+          </p>
+        </article>
+      </section>
+      <footer>
+        <details><summary>Previous missions (this session)</summary><div id="previous-missions"></div></details>
+        <span
+          ><strong>NIDAR</strong> AIR MOUSE <span class="slash">/</span> LAPTOP
+          PROOF OF CONCEPT</span
+        ><span id="updated">Waiting for data</span>
+      </footer>
+    </main>
+  </body>
+</html>

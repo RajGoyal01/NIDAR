@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-10-06T19:19:08.285079+00:00",
+  "model_class": "person_candidate",
+  "mode": "hybrid_general_plus_posture_specialist",
+  "dataset": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\datasets\\nidar_person_v4_full_visdrone",
+  "split": "test",
+  "policy": {
+    "primary_confidence": 0.2,
+    "general_confidence": 0.7,
+    "posture_confidence": 0.25,
+    "horizontal_aspect": 1.0,
+    "small_confidence": 0.2,
+    "small_area_ratio": 0.006,
+    "dedupe_iou": 0.5
+  },
+  "images": 2956,
+  "overall": {
+    "truths": 29282,
+    "tp": 4793,
+    "fp": 5043,
+    "precision": 0.4872915819438796,
+    "recall": 0.1636841745782392
+  },
+  "by_source": {
+    "coco": {
+      "truths": 1450,
+      "tp": 1046,
+      "fp": 300,
+      "images": 899,
+      "negative_images_with_fp": 30,
+      "precision": 0.7771173848439822,
+      "recall": 0.7213793103448276
+    },
+    "fallen": {
+      "truths": 450,
+      "tp": 415,
+      "fp": 123,
+      "images": 447,
+      "precision": 0.7713754646840149,
+      "recall": 0.9222222222222223
+    },
+    "visdrone": {
+      "truths": 27382,
+      "tp": 3332,
+      "fp": 4620,
+      "images": 1610,
+      "negative_images_with_fp": 53,
+      "precision": 0.41901408450704225,
+      "recall": 0.12168577897889124
+    }
+  },
+  "by_size": {
+    "large": {
+      "truths": 1192,
+      "tp": 1099,
+      "recall": 0.9219798657718121
+    },
+    "medium": {
+      "truths": 2837,
+      "tp": 1434,
+      "recall": 0.5054635178004935
+    },
+    "small": {
+      "truths": 6608,
+      "tp": 1567,
+      "recall": 0.237136803874092
+    },
+    "tiny": {
+      "truths": 18645,
+      "tp": 693,
+      "recall": 0.03716814159292035
+    }
+  },
+  "fallen_pose_recall": {
+    "fallen": 0.914364640883978,
+    "lying": 0.9318181818181818,
+    "sitting": 0.9375,
+    "standing": 1.0
+  },
+  "inference_median_ms": 34.120999996957835,
+  "inference_p95_ms": 40.896324997447664,
+  "interpretation": "Visible person/body candidate only; not medical status or unique identity.",
+  "primary_model": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\models\\yolo11n.pt",
+  "specialist_model": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\runs\\training\\nidar-person-yolo11n-v7-curriculum\\weights\\best-person-candidate.pt",
+  "policy_source": "C:\\path\\to\\NIDAR\\Raj Gupta\\ML\\logs\\hybrid-v1-calibration.json"
+}

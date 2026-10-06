@@ -1,0 +1,9 @@
+{
+  "primary_confidence": 0.2,
+  "general_confidence": 0.7,
+  "posture_confidence": 0.25,
+  "horizontal_aspect": 1.0,
+  "small_confidence": 0.2,
+  "small_area_ratio": 0.006,
+  "dedupe_iou": 0.5
+}
